@@ -1,0 +1,62 @@
+/* General Styles */
+.navbar {
+    background-color: #232f3e;
+    color: white;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar__container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .navbar__menu {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .navbar__menuIcon {
+    font-size: 25px;
+    margin-right: 5px;
+  }
+  
+  .navbar__menuText {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .navbar__links {
+    display: flex;
+    gap: 20px;
+    margin-left: 40px;
+  }
+  
+  .navbar__link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .navbar__link:hover {
+    color:lightpink;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar__links {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar__menu {
+      font-size: 18px;
+    }
+  }
+  
