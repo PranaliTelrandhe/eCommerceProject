@@ -10,7 +10,7 @@ const BrandPortfolio = () => {
     const fetchBrands = async () => {
       const topBrands = [
         { id: 1, name: "H&M",  logo: "../assets/images/brand1.jpg", description: "Min 60-70% Off" },
-        { id: 2, name: "Levi's", logo: "", description: "Min 40% Off" },
+        { id: 2, name: "Levi's", logo: "../assets/images/brand2.jpg", description: "Min 40% Off" },
         { id: 3, name: "Nike", logo: "", description: "" },
         { id: 4, name: "Adidas", logo: "", description: "" },
         { id: 5, name: "Zara", logo: "", description: "" },
