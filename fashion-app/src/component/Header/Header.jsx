@@ -1,7 +1,13 @@
 import React from "react";
+import { Link } from 'react-router-dom'; 
 import "./Header.css"; // Custom CSS for styling
+import { ShopContext } from '../../App';
+import { useContext } from 'react';
+
 
 const Header = () => {
+  const {cart}= useContext(ShopContext)
+
   return (
     <header className="header">
       {/* Logo Section */}
@@ -28,20 +34,23 @@ const Header = () => {
       {/* Navigation Links */}
       <div className="header__nav">
         <div className="header__option">
-          <span className="header__optionLineOne">Hello, Sign in</span>
-          <span className="header__optionLineTwo">Account & Lists</span>
+          <span className="header__optionLineOne nav-link">Hello, Sign in</span>
+          <span className="header__optionLineTwo nav-link">Account & Lists</span>
         </div>
         <div className="header__option">
-          <span className="header__optionLineOne">Returns</span>
-          <span className="header__optionLineTwo">& Orders</span>
+          <span className="header__optionLineOne nav-link">Returns</span>
+          <span className="header__optionLineTwo nav-link">& Orders</span>
         </div>
         <div className="header__option">
-          <span className="header__optionLineOne">Your</span>
-          <span className="header__optionLineTwo">Prime Account</span>
+          <span className="header__optionLineOne nav-link">Your</span>
+          <span className="header__optionLineTwo nav-link">Prime Account</span>
         </div>
         <div className="header__basket">
           🛒 {/* Replace with an icon */}
-          <span className="header__basketCount">0</span>
+          <Link  title="view cart" className='nav-link header_basketcount' to="/cart">0{/*<FaCartShopping size={24}/>*/}
+        <span className='badge 
+        rounded-circle bg-success
+        position-absolute top-0 me-3'>{cart.lenght}</span> </Link>
         </div>
       </div>
     </header>
