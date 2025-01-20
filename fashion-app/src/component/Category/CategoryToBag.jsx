@@ -10,7 +10,7 @@ const CategoryToBag = () => {
     const fetchCategories = async () => {
       // Replace with API call if needed
       const categoryData = [
-        { id: 1, name: "Men", image: "../assets/images/catmen.jpg" },
+        { id: 1, name: "Men", image: "../assets/images/catmen.jpg"  },
         { id: 2, name: "Women", image:"../assets/images/catwomen.jpg" },
         { id: 3, name: "Kids", image: "../assets/images/catkid.jpg" },
         { id: 4, name: "Home & Living", image: "../assets/images/cathome.jpg" },
