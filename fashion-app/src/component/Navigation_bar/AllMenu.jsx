@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import "./AllMenu.css";
 import { Link } from 'react-router-dom'; 
+import { ShopContext } from '../../App';
+import { useContext } from 'react';
+
 
 const AllMenu = () => {
+  const {cart}= useContext(ShopContext)
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
