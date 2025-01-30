@@ -18,7 +18,6 @@ const Navbar = () => {
         <div className="navbar__links">
           <Link to="/deal" className="navbar__link">Today's Deals</Link>
           <Link to="/customer" className="navbar__link">Customer Service</Link>
-          <Link to="/resigstry" className="navbar__link">Registry</Link>
           <Link to="/gift" className="navbar__link">Gift Cards</Link>
           <Link to="/sell" className="navbar__link">Sell</Link>
         </div>
