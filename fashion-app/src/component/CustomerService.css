@@ -1,0 +1,68 @@
+/* General Page Styling */
+.customer-service-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* Section Styling */
+  .customer-service-section {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Section Headings */
+  .customer-service-section h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* List Styling */
+  .customer-service-list {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .customer-service-list li {
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  /* Contact Info */
+  .contact-info p {
+    margin: 8px 0;
+    font-size: 16px;
+  }
+  
+  .contact-info a {
+    color: #ff3f6c;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Live Chat Button */
+  .chat-button {
+    display: inline-block;
+    background-color: #ff3f6c;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .chat-button:hover {
+    background-color: #e62e5a;
+  }
+  
