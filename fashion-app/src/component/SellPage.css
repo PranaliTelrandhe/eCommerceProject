@@ -1,12 +1,12 @@
 /* Container for the sell page */
 .sell-page {
     width: 100%;
-    max-width: 600px; /* Limit width to make it look neat */
+    max-width: 600px; /* Limit width */
     margin: 40px auto;
     padding: 30px;
     background-color: #fff;
     border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /*shadow effect */
     font-family: 'Arial', sans-serif;
     text-align: center;
   }
@@ -19,7 +19,7 @@
     color: #333;
   }
   
-  /* Subheading or description */
+  /* Subheading  */
   .sell-page p {
     font-size: 1rem;
     color: #777;
@@ -63,7 +63,7 @@
     box-shadow: 0px 0px 5px rgba(255, 153, 0, 0.5);
   }
   
-  /* Submit button styling */
+  /* Submit button */
   .product-form button {
     background-color: #ff9900;
     color: white;
@@ -78,15 +78,15 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  /* Hover effect for the button */
+  
   .product-form button:hover {
     background-color: #e68900;
   }
   
-  /* Responsive design for mobile devices */
+  /* Responsive design */
   @media screen and (max-width: 768px) {
     .sell-page {
-      width: 90%; /* Full width on smaller screens */
+      width: 90%; 
       padding: 20px;
     }
   
