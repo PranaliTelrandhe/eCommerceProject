@@ -1,0 +1,79 @@
+/* Gift Card Container */
+.gift-card-container {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Title */
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Purchase Section */
+  .purchase-section {
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .purchase-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Input Fields */
+  .input-field {
+    width: 80%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Purchase Button */
+  .purchase-btn {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .purchase-btn:hover {
+    background-color: #e68a00;
+  }
+  
+  /* Gift Card List */
+  .gift-card-list {
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gift-card-list h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Gift Card Items */
+  .gift-card-item {
+    background: #f1f1f1;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+  }
+  
