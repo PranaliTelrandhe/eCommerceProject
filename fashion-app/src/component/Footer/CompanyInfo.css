@@ -1,0 +1,39 @@
+.company-info-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  h1, h2 {
+    color: #333;
+  }
+  
+  .company-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .company-section {
+    text-align: left;
+    margin-top: 20px;
+  }
+  
+  .company-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .company-section li {
+    padding: 5px 0;
+  }
+  
+  p {
+    color: #444;
+  }
+  

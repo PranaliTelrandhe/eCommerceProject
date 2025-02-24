@@ -5,6 +5,8 @@ import logo from './logo.svg'; // Asset imports
 import './App.css'; // CSS file
 
 
+
+
 // Create global Context Object and export
 export const ShopContext = createContext();
 
@@ -38,6 +40,7 @@ function App() {
       <ShopContext.Provider value={{ cart, addToCart, removeFromCart }}>
         <ShopRouter />
       </ShopContext.Provider>
+      
     </div>
    
     
