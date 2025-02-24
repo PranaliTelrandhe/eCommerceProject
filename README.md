@@ -3,10 +3,15 @@
 
 Features:
  Modern UI/UX
+ 
  Add to Cart Functionality
+ 
  Product Search & Filtering
+ 
  Product Categories
+ 
  Secure Checkout System
+ 
  Fully Responsive Design
 
  Technologies Used :
