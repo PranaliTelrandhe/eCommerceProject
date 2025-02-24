@@ -3,8 +3,17 @@ import KidCard from "../kids/KidCard";
 import kid from "../kids/Kid_data";
 import { filterKidByBrand, filterUniqueBrands } from "../kids/Brand_kfilter";
 import BrandKbutton from "../kids/BrandKbutton";
+import { useEffect } from "react";
+
 
 const KidGallery = () => {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
+
   const [filteredResult, setFilteredResult] = useState(kid);
 
   const uniqueBrands = filterUniqueBrands(kid);

@@ -3,8 +3,12 @@ import men from "../database/men_data";
 import { filterMenByBrand, filterUniqueBrands } from "../men/Brand_filter";
 import MenItem from "./MenItem";
 import BrandButton from "./BrandButton";
+import { useEffect } from "react";
 
 const MenList = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [filteredResult, setFilteredResult] = useState(men);
 
   const uniqueBrands = filterUniqueBrands(men);

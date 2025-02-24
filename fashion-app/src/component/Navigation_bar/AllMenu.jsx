@@ -26,8 +26,8 @@ const AllMenu = () => {
           <Link to="/men" className="allMenu__item">Men</Link>
           <Link to="/women" className="allMenu__item">Women</Link>
           <Link to="/kids" className="allMenu__item">Kids</Link>
-          <Link to="/home" className="allMenu__item">Home & Living</Link>
-          <Link to="/beauty" className="allMenu__item">Beauty & Personal Care</Link>
+          <Link to="/home-living" className="allMenu__item">Home & Living</Link>
+          <Link to="/beauty-personal-care" className="allMenu__item">Beauty & Personal Care</Link>
         </div>
       )}
     </div>

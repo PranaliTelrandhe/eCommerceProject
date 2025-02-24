@@ -3,8 +3,13 @@ import WomenCard from "./WomenCard";
 import women from "./women_data";
 import { filterWomenByBrand, filterUniqueBrands } from "../women/Brand_wfilter";
 import BrandWbutton from "../women/BrandWbutton";
+import { useEffect } from "react";
 
 const WomenGallery = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [filteredResult, setFilteredResult] = useState(women);
 
   const uniqueBrands = filterUniqueBrands(women);

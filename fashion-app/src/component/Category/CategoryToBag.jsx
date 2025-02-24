@@ -17,7 +17,7 @@ const CategoryToBag = () => {
       { id: 4, name: "Home & Living", image:"../assets/images/cathome.jpg"
       , path: "/home-living" },
       { id: 5, name: "Beauty & Personal Care", image:"../assets/images/catbeauty.jpg"
-      , path: "/beauty" },
+      , path: "/beauty-personal-care" },
     ];
     setCategories(categoryData);
   }, []);

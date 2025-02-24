@@ -3,23 +3,20 @@ import { ShopContext } from "../../App";
 import { FaTrashAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-// Calculate the total price of items in the cart (considering discounts)
+// Calculate cart total (with discounts)
 const totalReducer = (cart) => {
-  const itemPrices = cart.map(item => 
-    item.price * (1 - (item.discount || 0) / 100) // Apply discount if available
-  );
-  const totalPrice = itemPrices.reduce((total, price) => total + price, 0);
-  return totalPrice;
+  return cart.reduce((total, item) => 
+    total + item.price * (1 - (item.discount || 0) / 100), 0
+  ).toFixed(2);
 };
 
 const ShoppingCart = () => {
   const { cart, removeFromCart } = useContext(ShopContext);
-  const navigate = useNavigate(); // Hook to navigate to the payment page
+  const navigate = useNavigate();
 
   const handlePaymentClick = () => {
-    // Redirect to the payment page or handle payment process
-    alert("Proceeding to Payment");
-    navigate("/payment"); // Example path to the payment page
+    const totalAmount = totalReducer(cart);
+    navigate("/payment", { state: { totalAmount } });
   };
 
   return (
@@ -28,73 +25,35 @@ const ShoppingCart = () => {
         <h1>Your cart is empty</h1>
       ) : (
         <div className="d-flex flex-column gap-3">
-          <div>
-            <h2>Your Shopping Cart</h2>
-          </div>
-          <div className="d-flex justify-content-between">
-            <h3>No of items: {cart.length}</h3>
-            <h3>
-              Cart Total: &#8377;{totalReducer(cart).toFixed(2)} {/* Total price with discounts */}
-            </h3>
-          </div>
-          <div>
-            <ul className="list-group">
-              {cart.map(item => (
-                <li className="list-group-item" key={item.id}>
-                  <div className="d-flex justify-content-between align-items-center">
-                    {/* Product Image */}
-                    <div>
-                      <img src={item.image} alt={item.name} width={100} height={100} />
-                    </div>
-                    {/* Product Details */}
-                    <div>
-                      {item.brand} {item.name}
-                    </div>
-                    {/* Discounted Price Display */}
-                    <div>
-                      <span className="text-danger fw-bold">
-                        &#8377;{(item.price * (1 - (item.discount || 0) / 100)).toFixed(2)} {/* Discounted Price */}
-                      </span>
-                      {item.discount ? (
-                        <>
-                          <br />
-                          <span className="text-decoration-line-through text-secondary">
-                            &#8377;{item.price.toFixed(2)} {/* Original Price */}
-                          </span>
-                          <br />
-                          <small className="text-success">Save {item.discount}%</small>
-                        </>
-                      ) : null}
-                    </div>
-                    {/* Remove Button */}
-                    <div>
-                      <button
-                        title="Remove item"
-                        className="btn btn-danger"
-                        onClick={() => {
-                          removeFromCart(item);
-                          alert("Item removed from cart");
-                        }}
-                      >
-                        <FaTrashAlt />
-                      </button>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <h2>Your Shopping Cart</h2>
+          <h3>Items: {cart.length} | Total: ₹{totalReducer(cart)}</h3>
+          
+          <ul className="list-group">
+            {cart.map(item => (
+              <li className="list-group-item d-flex justify-content-between align-items-center" key={item.id}>
+                <img src={item.image} alt={item.name} width={80} height={80} />
+                <div>{item.brand} {item.name}</div>
+                <div>
+                  <span className="text-danger fw-bold">₹{(item.price * (1 - (item.discount || 0) / 100)).toFixed(2)}</span>
+                  {item.discount && (
+                    <>
+                      <br />
+                      <span className="text-decoration-line-through text-secondary">₹{item.price.toFixed(2)}</span>
+                      <br />
+                      <small className="text-success">Save {item.discount}%</small>
+                    </>
+                  )}
+                </div>
+                <button className="btn btn-danger" onClick={() => removeFromCart(item)}>
+                  <FaTrashAlt />
+                </button>
+              </li>
+            ))}
+          </ul>
 
-          {/* Total Price to Pay Button */}
-          <div className="mt-4">
-            <h3>Total Price to Pay: &#8377;{totalReducer(cart).toFixed(2)}</h3>
-            <button
-              className="btn btn-success w-100"
-              onClick={handlePaymentClick}
-            >
-              Proceed to Payment
-            </button>
-          </div>
+          <button className="btn btn-success mt-3 w-100" onClick={handlePaymentClick}>
+            Proceed to Payment (₹{totalReducer(cart)})
+          </button>
         </div>
       )}
     </div>

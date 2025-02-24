@@ -1,61 +1,83 @@
-import React from "react";
-import { Link } from 'react-router-dom'; 
-import "./Header.css"; // Custom CSS for styling
-import { ShopContext } from '../../App';
-import { useContext } from 'react';
-import { FaCartShopping } from "react-icons/fa6";
+import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
+import "./Header.css";
+import { ShopContext } from "../../App";
+import { FaShoppingCart ,FaSearch,FaUser } from "react-icons/fa";
 
+
+const brandsList = ["H&M", "Levi's", "Nike", "Adidas", "Zara", "Puma", "Biba", "FabIndia"];
 
 const Header = () => {
-  const {cart}= useContext(ShopContext)
+  const { cart } = useContext(ShopContext);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredBrands, setFilteredBrands] = useState([]);
+
+  const handleSearch = (e) => {
+    const query = e.target.value.toLowerCase();
+    setSearchQuery(query);
+
+    if (query.trim() === "") {
+      setFilteredBrands([]);
+    } else {
+      const results = brandsList.filter((brand) => brand.toLowerCase().includes(query));
+      setFilteredBrands(results);
+    }
+  };
 
   return (
     <header className="header">
-      {/* Logo Section */}
+      {/* Logo */}
       <div className="header__logo">
-        <img
-          src="../assets"
-          alt="Fashion Logo"
-          className="header__logoImage"
-        />
+        <Link to="/">
+          <img src="/assets/images/logo.png" alt="Fashion Logo" className="header__logoImage" />
+        </Link>
       </div>
 
-      {/* Search Bar Section */}
+      {/* Search Bar */}
       <div className="header__search">
         <input
           type="text"
           className="header__searchInput"
-          placeholder="Search Fashion-Pro"
+          placeholder="Search for brands..."
+          value={searchQuery}
+          onChange={handleSearch}
         />
         <button className="header__searchButton">
-          🔍 {/* Replace with an icon */}
+          <FaSearch />
         </button>
+
+        {/* Search Dropdown */}
+        {filteredBrands.length > 0 && (
+          <div className="search-dropdown">
+            {filteredBrands.map((brand, index) => (
+              <Link key={index} to={`/search/${brand}`} className="search-result">
+                {brand}
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Navigation Links */}
       <div className="header__nav">
-        <div className="header__option">
-          <span className="header__optionLineOne nav-link">Hello, Sign in</span>
-          <span className="header__optionLineTwo nav-link">Account & Lists</span>
-        </div>
-        <div className="header__option">
-          <span className="header__optionLineOne nav-link">Returns</span>
-          <span className="header__optionLineTwo nav-link">& Orders</span>
-        </div>
-        <div className="header__option">
-          <span className="header__optionLineOne nav-link">Your</span>
-          <span className="header__optionLineTwo nav-link">Prime Account</span>
-        </div>
+        <Link to="/signin" className="header__option">
+          <FaUser />
+          <span className="header__optionText">Sign In</span>
+        </Link>
+
+        <Link to="/orders" className="header__option">
+          <span className="header__optionText">Returns & Orders</span>
+        </Link>
+
         <div className="header__basket">
-        {/*  🛒 */}{/* Replace with an icon */}
-        {/*  <Link  title="view cart" className='nav-link header_basketcount' to="/cart">0{/*<FaCartShopping size={24}/>*/}
-       {/* <span className='badge 
-        rounded-circle bg-success
-        position-absolute top-0 me-3'>{cart.lenght}</span> </Link>*/}
-        <Link  title="view cart" className='nav-link position-relative  btn btn-primary' to="/cart"><FaCartShopping size={24}/>
-        <span className='badge 
-        rounded-circle bg-success
-        position-absolute top-0 me-3'>{cart.lenght}</span> </Link>
+          <Link to="/cart" className="nav-link position-relative btn btn-primary">
+            <FaShoppingCart size={24} />
+            {cart.length > 0 && (
+              <span className="badge rounded-circle bg-success position-absolute top-0 me-3">
+                {cart.length}
+              </span>
+            )}
+          </Link>
         </div>
       </div>
     </header>
